@@ -126,7 +126,7 @@ int main(int argc, char **argv) {
     RLOGD("**RIL Daemon Started**");
     RLOGD("**RILd param count=%d**", argc);
 
-    initWithMmapSize();
+    /* initWithMmapSize() is not exported by libril on 16.0. */
     umask(S_IRGRP | S_IWGRP | S_IXGRP | S_IROTH | S_IWOTH | S_IXOTH);
     for (i = 1; i < argc ;) {
         if (0 == strcmp(argv[i], "-l") && (argc - i > 1)) {
